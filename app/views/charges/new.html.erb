@@ -1,0 +1,27 @@
+<div style="text-align: center">
+<h3> Vous voulez perdre beaucoup de graisse en très peu de temps, tout en mangeant des pizzas devant la télé avec coca, bière et crème fouettée au dessert??</h3>
+<h4>🍟🍕🍡🍭🍪🍫🍻</h4>
+<h4> Je sens que vous n'y croyez pas... et pourtant, c'est aujourd'hui <em> possible</em> !!!! </h4>
+<h4> Pour la modique somme de 399,99€, recevez notre boite de 50 comprimés qui vous aideront à perdre du poids tout en gardant une vie sans sport et sans effort! </h4>
+
+
+<%= form_tag charges_path do %>
+  <article>
+    <% if flash[:error].present? %>
+      <div id="error_explanation">
+        <p><%= flash[:error] %></p>
+      </div>
+    <% end %>
+    <label class="amount">
+      <span>Montant: 399.99€ (*) </span>
+    </label>
+  </article>
+<br>
+  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+          data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+          data-description="A month's subscription"
+          data-amount="39999"
+          data-locale="auto"></script>
+<% end %>
+<br>
+<p style="font-size: 10px"> (*) Ce montant sera prélevé tous les 5, 15, et 25 du mois en cours pendant une période indéterminée. Ces fonds iront vers le commerce de la drogue, des putes et des banques monégasques. Vous aurez cependant la possibilité de faire cesser ces paiements contre les reins de 10 de vos proches (pas le votre, il est et restera gras). </p>
