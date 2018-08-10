@@ -4,8 +4,17 @@
 <h4> Je sens que vous n'y croyez pas... et pourtant, c'est aujourd'hui <em> possible</em> !!!! </h4>
 <h4> Pour la modique somme de 399,99€, recevez notre boite de 50 comprimés qui vous aideront à perdre du poids tout en gardant une vie sans sport et sans effort! </h4>
 
+Merci de bien vouloir renseigner les éléments suivants avant de procéder au paiement par CB:
+
+
 
 <%= form_tag charges_path do %>
+
+<%= label_tag 'Adresse mail' %>
+<%= email_field_tag 'email' %>
+  <%= label_tag 'Nom' %>
+  <%= text_field_tag 'name' %>
+
   <article>
     <% if flash[:error].present? %>
       <div id="error_explanation">
@@ -24,4 +33,5 @@
           data-locale="auto"></script>
 <% end %>
 <br>
-<p style="font-size: 10px"> (*) Ce montant sera prélevé tous les 5, 15, et 25 du mois en cours pendant une période indéterminée. Ces fonds iront vers le commerce de la drogue, des putes et des banques monégasques. Vous aurez cependant la possibilité de faire cesser ces paiements contre les reins de 10 de vos proches (pas le votre, il est et restera gras). </p>
+<p style="font-size: 10px"> (*) Ce montant sera prélevé tous les 5, 15, et 25 du mois en cours pendant une période indéterminée. Dans un souci de transparence, nous vous informons que ces fonds iront vers le commerce de la drogue, des putes et des banques monégasques.
+Si jamais vous souhaitez vous désabonner, nous sommes au regret de vous avertir que ce n'est pas possible. Nous n'avons pas prévu le petit bouton qui vous permettrait de le faire. Nous restons cependant à votre disposition pour tout renseignement complémentaire, pourvu qu'il ne soit pas en lien avec la présente page. </p>
