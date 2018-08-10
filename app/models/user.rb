@@ -8,10 +8,5 @@ VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
 validates :email, presence: true, length: { maximum: 255 },
           format: { with: VALID_EMAIL_REGEX }
 
-  after_create :send_welcome_email
 
-  private
-  def send_welcome_email
-  UserMailer.welcome_email(self).deliver_now
-  end
 end
